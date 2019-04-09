@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Docstapr make it true</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="uploadhash/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Rapid
+    Theme URL: https://bootstrapmade.com/rapid-multipurpose-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header">
+
+    <div id="topbar">
+      <div class="container">
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+          <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+          <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <h1 class="text-light"><a href="#intro" class="scrollto"><span>DocStampr</span></a></h1>
+        <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#intro">Home</a></li>
+          <li><a href="#stampr">Stamp a doc</a></li>
+          <li><a href="#services">How it works</a></li>
+          <li><a href="#footer">Contact Us</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
+
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro" class="clearfix">
+    <div class="container d-flex h-100">
+      <div class="row justify-content-center align-self-center">
+        <div class="col-md-6 intro-info order-md-first order-last">
+          <h2>Timestamp<br> your <span>document!</span></h2>
+	  <h3>Check for integrity. Prove ownership. Never reveal the data. </h3>
+          <div>
+            <a href="#stampr" class="btn-get-started scrollto">Test it now</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 intro-img order-md-last order-first">
+          <img src="img/intro-img.svg" alt="" class="img-fluid">
+        </div>
+      </div>
+
+    </div>
+  </section><!-- #intro -->
+
+  <main id="main">
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="stampr">
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-5 col-md-6">
+            <div class="about-img">
+              <img src="img/upload-sized.png" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-7 col-md-6">
+            <div class="about-content">
+	      <br/>
+              <h2>DOCSTAMP your file</h2>
+              <h3>Upload your document here.</h3>
+
+              <div class="upload">
+                <div class="upload-files">
+                  <header>
+                    <p>
+                      <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                      <span class="up">up</span>
+                      <span class="load">load</span>
+                    </p>
+                  </header>
+                  <div class="body shown" id="drop">
+                    <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
+                    <p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a href="" id="triggerFile">browse</a> to begin the upload</p>
+                  </div>
+                  <footer class="hidden" id="hash">
+                    <div class="divider">
+                    </div>
+                    <div class="list-files">
+                      <div class="row">
+                        <div class="col-2">
+                          <div id="delete-file" class="icon"><i class="ion-ios-paper-outline"></i></div>
+                        </div>
+                        <div class="col-9">
+                          <div class="file-desc">
+                            <div class="row">
+                              <div class="col-1 text-left">
+                                File:
+                              </div>
+                              <div id="file-name" class="col-10 text-left text-truncate">
+
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-1 text-left">
+                                Hash:
+                              </div>
+                              <div class="col-10 text-left text-truncate" id="file-input-hash">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <form id="metadataForm" enctype="multipart/form-data">
+                        <div class="row">
+                          <div class="col-2">
+                            <button type="submit" id="update" class="btn btn-primary importar">Update</button>
+                          </div>
+                          <div class="col-9">
+                            <div class="form-group">
+                              <input type="text" class="form-control form-control-sm" id="tag" aria-describedby="tagHelp" placeholder="Enter tags">
+                            </div>
+                            <div class="form-check">
+                              <input type="checkbox" class="form-check-input" id="uploadFileCheck">
+                              <label class="form-check-label" for="uploadFileCheck">Upload file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="file" id="file-input" />
+                      </form>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+
+
+
+
+              <p>Add your file here and the proof of its authenticity will be sent to the blockchain. The file remains local, no one accesses it, only the proof of its authenticity is recorded forever on the blockchain!</p>
+              <ul>
+                <li><i class="ion-android-checkmark-circle"></i> Upload your file and leave a message for people who whant to check it.</li>
+                <li><i class="ion-android-checkmark-circle"></i> When a document is already registred, you see the message left by its author.</li>
+                <li><i class="ion-android-checkmark-circle"></i> To add a new version, upload the last version and add the new one.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- #about -->
+
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="services" class="section-bg">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>What's for ?</h3>
+          <p>DOCSTAMPR let you register the proof of existance of your document on a blockchain... then anyone can check they have the good one.</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
+              <h4 class="title"><a href="">Document integrity</a></h4>
+              <p class="description">Check the document you see has not been modified</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline" style="color: #e98e06;"></i></div>
+              <h4 class="title"><a href="">Intelectual property</a></h4>
+              <p class="description">Get proof that you had an idea without revealing it</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon" style="background: #e6fdfc;"><i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i></div>
+              <h4 class="title"><a href="">Ownership</a></h4>
+              <p class="description">Prove ownership and Deed transfer</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon" style="background: #eafde7;"><i class="ion-ios-speedometer-outline" style="color:#41cf2e;"></i></div>
+              <h4 class="title"><a href="">Save time</a></h4>
+              <p class="description">Let peaple check temselfe if they have the right document</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon" style="background: #e1eeff;"><i class="ion-ios-world-outline" style="color: #2282ff;"></i></div>
+              <h4 class="title"><a href="">Brand image</a></h4>
+              <p class="description">Allow partners to check if the document used is authorized</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon" style="background: #ecebff;"><i class="ion-ios-clock-outline" style="color: #8660fe;"></i></div>
+              <h4 class="title"><a href="">Time Staming</a></h4>
+              <p class="description">Great achievement ? Had a time stamp to a document</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #services -->
+
+    <!--==========================
+      Why Us Section
+    ============================-->
+    <section id="why-us" class="wow fadeIn">
+      <div class="container-fluid">
+
+        <header class="section-header">
+          <h3>How does it works?</h3>
+          <p>Your document is locally transformed into a cryptographic proof. Then this proof is stored on a blockchain.</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="why-us-img">
+              <img src="img/smart-b-contributor.png" alt="" class="img-fluid">
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="why-us-content">
+              <p>Blockchain technology allow to store datas on a ledger shared across a pool of computers owned by different peaple. Has these peaple are incentivized to keep it clean, Changing a single data on this ledger is not impossible.</p>
+              <p>
+                Relying on this principle, your document proof of exostance is stored on the blockchain network and this proof (not the tata) will always be checkable by anyone.
+
+                Test it by your own ! send a file...
+              </p>
+
+              <div class="features wow bounceInUp clearfix">
+                <i class="fa fa-cubes" style="color: #e7b81c;"></i>
+                <h4>Smart-B blockchain</h4>
+                <p>DOCSTAMPR use Smart-B blockchain and is integrated as a core feature. Each cityzen can now prove any document ownership.</p>
+              </div>
+
+              <div class="features wow bounceInUp clearfix">
+                <i class="fa fa-plug" style="color: #1bb1dc;"></i>
+                <h4>Integration services</h4>
+                <p>Our professionnal services let you integrate this mecanisme in any permissionned blockchain.</p>
+              </div>
+
+              <div class="features wow bounceInUp clearfix">
+                <i class="fa fa-random" style="color: #57b894;"></i>
+                <h4>Opensource</h4>
+                <p>All code and applications are opensourced in Civis Blockchain association repository.</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="container">
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">274</span>
+            <p>Doc stamped</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">421</span>
+            <p>Doc checked</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">1,364</span>
+            <p>Block added</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">18</span>
+            <p>Nodes</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!--==========================
+      Call To Action Section
+    ============================-->
+    <section id="call-to-action" class="wow fadeInUp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-left">
+            <h3 class="cta-title">Stamp your doc for 1€ !</h3>
+            <p class="cta-text"> Using DOCSTAMPR service is cheap, for 1 euro, your document is uploaded on the network and any one in the world can check its availability !</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#">Try it now</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #call-to-action -->
+
+
+
+
+    <!--==========================
+      Pricing Section
+    ============================-->
+    <section id="pricing" class="wow fadeInUp section-bg">
+
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Pricing</h3>
+          <p>Simple app, simple princing</p>
+        </header>
+
+        <div class="row flex-items-xs-middle flex-items-xs-center">
+          <!-- Basic Plan  -->
+          <div class="col-xs-1 col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                <h3>Free</h3>
+              </div>
+              <div class="card-block">
+                <h4 class="card-title">
+                  Free plan
+                </h4>
+                <ul class="list-group">
+                  <li class="list-group-item">Add a document</li>
+                  <li class="list-group-item">Get the hash</li>
+                  <li class="list-group-item">Check hash any time</li>
+                  <li class="list-group-item">No file upload</li>
+                  <li class="list-group-item">No meta-data</li>
+                  <li class="list-group-item">No integration</li>
+                  <li class="list-group-item">No support</li>
+                </ul>
+                <a href="#" class="btn">Add a doc</a>
+              </div>
+	    </div>
+	  </div>
+          <!-- Basic Plan  -->
+          <div class="col-xs-1 col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                <h3><span class="currency">€</span>1<span class="period">/doc</span></h3>
+              </div>
+              <div class="card-block">
+                <h4 class="card-title">
+                  Easy plan
+                </h4>
+                <ul class="list-group">
+                  <li class="list-group-item">Add a document</li>
+                  <li class="list-group-item">Get the Hash</li>
+                  <li class="list-group-item">Check any time and download</li>
+                  <li class="list-group-item">Upload the file (optional)</li>
+                  <li class="list-group-item">Add meta-data</li>
+                  <li class="list-group-item">No integration</li>
+                  <li class="list-group-item">No support</li>
+                </ul>
+                <a href="#" class="btn">Add a doc</a>
+              </div>
+            </div>
+          </div>
+          <!-- Basic Plan  -->
+          <div class="col-xs-1 col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                <h3>Pro</h3>
+              </div>
+              <div class="card-block">
+                <h4 class="card-title">
+                  Contact us
+                </h4>
+                <ul class="list-group">
+                  <li class="list-group-item">Add a document</li>
+                  <li class="list-group-item">Get the Hash</li>
+                  <li class="list-group-item">Check any time and download</li>
+                  <li class="list-group-item">Upload the file (optional)</li>
+                  <li class="list-group-item">Add meta-data</li>
+                  <li class="list-group-item">Integrate with your apps</li>
+                  <li class="list-group-item">Professionnal support</li>
+                </ul>
+                <a href="#" class="btn">Contact us</a>
+              </div>
+            </div>
+          </div>
+
+
+
+    </section><!-- #pricing -->
+
+    <!--==========================
+      Frequently Asked Questions Section
+    ============================-->
+    <section id="faq">
+      <div class="container">
+        <header class="section-header">
+          <h3>Frequently Asked Questions</h3>
+          <p>If have any question not here, kindly contact us !</p>
+        </header>
+
+        <ul id="faq-list" class="wow fadeInUp">
+          <li>
+            <a data-toggle="collapse" class="collapsed" href="#faq1">Why don't you use Ethereum or Bitcoin? <i class="ion-android-remove"></i></a>
+            <div id="faq1" class="collapse" data-parent="#faq-list">
+              <p>
+                We use a permissionned blockchain because we don't neet the cryptocurency stuff. We can then offer a fixed pice for our service. There already (still?)exist this kind of service on public blockchain if you need so.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq2" class="collapsed">What's the technology behind the service? <i class="ion-android-remove"></i></a>
+            <div id="faq2" class="collapse" data-parent="#faq-list">
+              <p>
+		We use SSM, an opensource protocol implemented on Smart-B to deploy fast and secure app without coding smart contracts.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq3" class="collapsed">Can I pay in bitcoin? <i class="ion-android-remove"></i></a>
+            <div id="faq3" class="collapse" data-parent="#faq-list">
+              <p>
+                Not at the moment, but maybe in the next upgrade.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq4" class="collapsed">What kind of flies can I use? <i class="ion-android-remove"></i></a>
+            <div id="faq4" class="collapse" data-parent="#faq-list">
+              <p>
+                At the moment, any pdf or image (jpg, png). We plan to add other formats soon. If you need send us a message.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq5" class="collapsed">How much it cost? <i class="ion-android-remove"></i></a>
+            <div id="faq5" class="collapse" data-parent="#faq-list">
+              <p>
+                Adding a doc is 1€, a part goes to paypal, another one in transaction fees, and the remaining for keeping the service alive.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section><!-- #faq -->
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer" class="section-bg">
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+
+                  <div class="footer-info">
+                    <h3>DOCSTAMPR</h3>
+                    <p>Docstampr is a collective project from Montpellier</p>
+                  </div>
+
+                  <div class="footer-newsletter">
+                    <h4>Our Newsletter</h4>
+                    <p>For now we don't have news letter, and don't really plan to do one... let your mail just in case.</p>
+                    <form action="" method="post">
+                      <input type="email" name="email"><input type="submit"  value="Subscribe">
+                    </form>
+                  </div>
+
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">About us</a></li>
+                      <li><a href="#">Services</a></li>
+                      <li><a href="http://stmpr.net/page/terms">Terms of service</a></li>
+                      <li><a href="http://stmpr.net/page/terms">Privacy policy</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <p>
+                      2, rue du Pavillon <br>
+                      34000 Montpellier<br>
+                      France <br>
+                      <strong>Email:</strong> info@smart-b.city<br>
+                    </p>
+                  </div>
+
+                  <div class="social-links">
+                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                  </div>
+
+                </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="form">
+
+              <h4>You whant professionnal services ?</h4>
+              <p>Please subscribe to our demo waiting list bellow.</p>
+              <form action="" method="post" role="form" class="contactForm">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+
+                <div id="sendmessage">Your message has been sent. Thank you!</div>
+                <div id="errormessage"></div>
+
+                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+              </form>
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>DOCSTAMPR</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Rapid
+        -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/mobile-nav/mobile-nav.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+  <script src="node_modules/js-sha256/build/sha256.min.js"></script>
+  <script src="uploadhash/main.js"></script>
+
+</body>
+</html>
